@@ -31,6 +31,7 @@ function App() {
         {list && Object.entries(list.Data).map(([coin]) =>
           list.Data[coin].PlatformType === "blockchain" ? (
             <CoinInfo
+              key={coin}
               image={list.Data[coin].ImageUrl}
               name={list.Data[coin].FullName}
               symbol={list.Data[coin].Symbol}
