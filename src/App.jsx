@@ -13,7 +13,12 @@ function App() {
       + API_KEY
       ); //calls api
       const data = await response.json();
-      setList(data);
+      const coinLimit = 50;
+
+      const limitedList  = Object.fromEntries(
+        Object.entries(data.Data).slice(0, coinLimit)
+      );
+      setList({ Data: limitedList });
     }
 
     fetchAllCoinData().catch(console.error); // Call the function
