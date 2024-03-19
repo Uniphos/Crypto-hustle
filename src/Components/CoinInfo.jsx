@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
+import './coinInfo.css'
 
-const CoinInfo = ({image, name, symbol}) => {
+const CoinInfo = ({key, image, name, symbol}) => {
     const [price, setPrice] = useState(null);
 
     useEffect(() => {
@@ -26,7 +27,7 @@ const CoinInfo = ({image, name, symbol}) => {
               src={`https://www.cryptocompare.com${image}`}
               alt={`Small icon for ${name} crypto coin`}
             />
-            {name} <span className="tab"></span> ${price.USD} USD
+            {name} <span className="tab"></span>  ${price.USD} USD
           </li>
           ) : 
           null
